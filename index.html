@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memory Game</title>
+    <!-- Link para o arquivo CSS reset -->
+    <link rel="stylesheet" href="./src/styles/reset.css">
+    <!-- Link para o arquivo CSS principal -->
+    <link rel="stylesheet" href="./src/styles/main.css">
+    <!-- Link para a biblioteca de animações animate.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <!-- Título do jogo com animação -->
+        <h2 class="animate__animated animate__bounceInLeft">Memory Game</h2>
+        <!-- Div para o tabuleiro do jogo -->
+        <div class="game"></div>
+        <!-- Botão para resetar o jogo -->
+        <button class="reset" onclick="window.location.reload()">RESET GAME</button>
+    </div>
+
+    <!-- Script para a lógica do jogo -->
+    <script src="./src/scripts/engine.js" defer></script>
+</body>
+
+</html>

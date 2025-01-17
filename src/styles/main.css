@@ -1,0 +1,138 @@
+/* Estilo para dispositivos com largura máxima de 1000px */
+@media screen and (max-width: 1000px) {
+    .reset {
+        font-size: 14px;
+        height: 55px;
+        line-height: 55px;
+        width: 150px;
+    }
+}
+
+/* Estilo do corpo da página */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: url(../img/body.jpg);
+    /* Imagem de fundo */
+    background-size: cover;
+    /* Cobrir toda a área do corpo */
+    user-select: none;
+    /* Desabilitar seleção de texto */
+}
+
+/* Estilo do contêiner principal */
+.container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    /* Espaçamento entre os elementos */
+    padding: 40px 60px;
+    /* Espaçamento interno do contêiner */
+    background: #00000080;
+    /* Fundo rosa com 50% de transparência */
+}
+
+/* Estilo do título h2 */
+h2 {
+    font-size: 3em;
+    color: #ef49ec;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    animation: animate__fadeInDownBig;
+    animation-duration: 2s;
+}
+
+/* Estilo do botão de reset */
+.reset {
+    background-color: initial;
+    background-image: linear-gradient(#8614f8 0, #760be0 100%);
+    border-radius: 5px;
+    border-style: none;
+    box-shadow: rgba(245, 244, 247, .25) 0 1px 1px inset;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font-family: Inter, sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    height: 60px;
+    line-height: 60px;
+    margin-left: -4px;
+    outline: 0;
+    text-align: center;
+    transition: all .3s cubic-bezier(.05, .03, .35, 1);
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    vertical-align: bottom;
+    width: 190px;
+}
+
+/* Estilo do botão de reset quando focado */
+.reset:focus {
+    color: #ec38bc;
+    background-color: #262809;
+}
+
+/* Estilo do botão de reset quando o cursor está sobre ele */
+.reset:hover {
+    opacity: .7;
+}
+
+/* Estilo do contêiner do jogo */
+.game {
+    width: 430px;
+    height: 430px;
+    display: flex;
+    flex-wrap: wrap;
+    /* Permitir que os itens se envolvam */
+    gap: 10px;
+    /* Espaçamento entre os itens */
+    transform-style: preserve-3d;
+    perspective: 500px;
+    /* Definir perspectiva 3D */
+}
+
+/* Estilo de cada item (carta) do jogo */
+.item {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    font-size: 3em;
+    transform: rotateY(180deg);
+    /* Rotacionar item para ficar "de costas" */
+    transition: 0.25s;
+}
+
+/* Estilo da parte de trás de cada item (carta) */
+.item::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: #6c14df;
+    transition: 0.25s;
+    transform: rotateY(0deg);
+    backface-visibility: hidden;
+}
+
+/* Estilo dos itens quando estão abertos */
+.item.boxOpen {
+    transform: rotateY(0deg);
+    /* Rotacionar item para ficar "de frente" */
+}
+
+/* Estilo das partes de trás dos itens quando estão abertos ou correspondentes */
+.boxOpen::after,
+.boxMatch::after {
+    transform: rotateY(180deg);
+    /* Rotacionar parte de trás para ficar "de costas" */
+}
